@@ -1,0 +1,553 @@
+html, body{
+	margin:0;
+	font-family: 'Montserrat', sans-serif;
+	width:100%;
+	overflow-y:hidden;
+	background-image:url("images/bkg.jpg");
+}
+
+span, p, strong{
+	color:white;
+}
+
+
+
+button:focus, input:focus{
+	outline: none;
+}
+
+input[type=checkbox]{
+	width:16px;
+	height: 16px;
+}
+
+
+
+.wdw{
+	width:100%;
+}
+
+
+
+
+/******************************  BOOTSTRAP CHANGES ******************************/
+
+.navbar-default{
+	background-color: #607D8B;
+	border-color: rgba(255, 255, 255, 0.2);
+	z-index: 10;
+}
+
+.navbar-default .navbar-text, .navbar-default .navbar-brand{
+	color:white;
+	cursor: pointer;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-text:hover{
+	opacity: 0.7;
+	color:white;
+}
+.navbar-default .navbar-toggle{
+	transition: 0.3s;
+}
+.navbar-default .navbar-toggle:hover{
+	background-color: white;
+}
+.navbar-default .navbar-toggle:hover .navbar-text{
+	color:#607D8B;
+}
+
+
+
+/******************************  REUSABLE CLASSES  ******************************/
+
+/* Containers */
+.height-space-container{
+	margin: 5em auto;
+	padding: 5em 0;
+}
+
+.main-container{
+	margin-top:150px;
+}
+
+
+.form-message{
+	width: 200px;
+	height: 4em;
+}
+
+.form-error{
+	width: 200px;
+	height: auto;
+	background-color: #E57373;
+	color:#263238;
+	margin-bottom: 10px;
+	padding: 10px 5px;
+	text-align: center;
+	opacity: 0;
+	transition: 2s;
+}
+
+
+/* TEXT */
+
+.describe-text{
+	opacity: 0.5;
+}
+.secondary-text{
+	opacity: 0.7;
+}
+
+.red-text{
+	color:#EF9A9A;
+}
+
+.green-text{
+	color:#A5D6A7;
+}
+
+/* Buttons, inputs, anchors */
+.btn-custom, .btn-white{
+	border:none;
+	padding: 5px 20px;
+	border-radius: 5px;
+	transition: 0.3s;
+	margin: 10px auto;
+}
+.btn-custom{
+	background-color: #848353;
+	color:white;	
+}
+.btn-custom:hover{
+	background-color: #44442B;
+}
+.btn-white{
+	background-color: white;
+	color:#263238;
+}
+.btn-white:hover{
+	background-color: rgba(255, 255, 255, 0.5);
+	color:#263238;
+}
+
+.inp-custom{
+	width:200px;
+	background-color: #263238;
+	border:1px solid rgba(255, 255, 255, 0.3);
+	color:rgba(255, 255, 255, 0.3);
+	padding: 10px 5px;
+	margin: 0 auto 10px auto;
+}
+.inp-custom:focus{
+	color:white;
+}
+
+
+/* Elements */
+.loader-big, .loader-small{
+	border:5px dashed rgba(255,255,255, 0.7);
+	border-radius: 100%;
+	animation: rotate 5s infinite linear;
+	-webkit-animation: rotate 5s infinite linear;
+	-moz-animation: rotate 5s infinite linear;
+	-o-animation: rotate 5s infinite linear;
+}
+.loader-small{
+	width:30px;
+	height: 30px;
+	border:2px dashed rgba(255,255,255, 0.7);
+	display: none;
+}
+.loader-big{
+	width:100px;
+	height: 100px;
+}
+@keyframes rotate {
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+
+/* Effects */
+
+
+.hidden{
+	display: none;
+}
+
+
+/******************************  FOREGROUND CONTAINER  ******************************/
+
+#foreground-container{
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100%;
+	height: 100vh;	
+	background-color:rgba(38, 50, 56, 0.9);
+	z-index: 1111;
+	display: block;
+}
+#foreground{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.fg-item{
+	display: none;
+	width: 100%;
+}
+
+
+.fg-box{
+	background-color: #263238;
+	width:100%;
+	max-width:400px;
+	height: 300px;
+	border:1px solid rgba(255,255,255, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+
+#fg-loader{
+	display: block;
+}
+
+
+
+/******************************  FOOTER + GOOGLE MAP  ******************************/
+footer{
+	height: 350px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	padding-top: 10px;
+	margin-top: 50px;
+}
+.copyrigth{
+	margin: 15px 0;
+}
+.copyrigth p {
+		color:#607D8B;
+}
+.footer-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.footer-container h2{
+	margin-top: 0;
+}
+ #company-info{
+	padding-left: 50px;
+	border-left: 1px solid rgba(0, 0, 0, 0.3);
+}
+#map{
+	width:250px;
+	height: 250px;
+	display: flex;
+	margin-right: 50px;
+}
+
+
+
+
+/******************************  INFO BAR  ******************************/
+
+#info-bar{
+	position: fixed;
+	top:50px;
+	height: 70px;
+	display: none;
+	align-items: center;
+	justify-content:space-between;
+	width: 100%;
+	background-color: #263238;
+   box-shadow: -15px 10px 20px rgba(0,0,0, 0.5);
+  padding: 0 5px;
+  z-index:1000;
+}
+
+#info-bar div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+
+
+
+/******************************  ACTION WINDOW  ******************************/
+
+#action-wdw{
+	position: fixed;
+	top:0;
+	right: 0;
+	height: 100%;
+	width:100%;
+	max-width: 300px;
+	display: none;
+	z-index: 1001;
+	background-color: #263238;
+	border-left:0.1em solid #636363;
+	border-top:0.1em solid #636363;
+  box-shadow: -15px 10px 20px rgba(0,0,0, 0.5);
+  padding: 0, 5px;
+}
+#action-info{
+	width:80%;
+	display: flex;
+	align-self: center;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+}
+
+#action-info > h2{
+	position: relative;
+	color:white;
+	margin-bottom:1em;
+	text-align: center;
+}
+#action-info .additional-info{
+	width: 100%;
+	text-align: left;
+	margin-bottom:1em;
+}
+#action-info  .describe-text{
+	margin-right: 10px;
+}
+.btn-plus, .btn-minus{
+	font-size: 2em;
+	width: 2em;
+	font-weight: bold;
+	background-color: white;
+	color: rgba(62, 80, 180, 1);
+}
+.action-button-container{
+	display: flex;
+	justify-content: center;
+}
+.action-button-container button{
+	margin-left: 1em;
+}
+.action-button-container button:first-child{
+	margin:none;
+}
+
+.action-close-container{
+	display: none;
+}
+
+
+
+/******************************  CHART WINDOW ******************************/
+
+#chart-container{
+	position: fixed;
+	z-index: 1000;
+	width: 100%;
+	height: auto;
+	min-height: 4em;
+	bottom:0;
+	display: none;
+	background-color: #263238;
+  box-shadow: -15px -15px 20px rgba(0,0,0, 0.5);
+}
+
+#chart{
+	position: relative;
+	width: 90%;
+	display: block;
+	margin: auto;
+	height: calc(40vh - 6em);
+	margin-top: 2em;
+	background-color:rgba(0,0,0, 0.1);
+}
+
+#chart-actions{
+	width: 100%;
+	height: 4em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+
+
+
+
+/******************************  HOME WINDOW  ******************************/
+
+#cover-container{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+#cover-img{
+	position: absolute;
+	top:0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index:0;
+}
+
+#cover-title{
+	position: relative;
+	font-size: 48px;
+	color:white;
+	z-index: 1;
+	text-align: center;
+}
+#cover-slogan{
+	position: relative;
+	font-size: 16pt;
+	color:white;
+	font-style: italic;
+	z-index: 1;
+}
+
+
+
+/******************************  MARKET WINDOW ******************************/
+
+#wdw-market{
+	display: none;
+}
+
+#active-item{
+	background-color: rgba(0,0,0, 0.2);
+}
+.currency-item{
+	cursor: pointer;
+}
+.currency-item:hover{
+	background-color: rgba(0,0,0, 0.1);
+}
+.currency-list{
+	background-color: #263238;
+	width:90%;
+	display: block;
+	margin:0 auto calc(40vh + 20px) auto;
+  box-shadow: -15px 10px 20px rgba(0,0,0, 0.5);
+}
+
+.currency-item{
+	width:100%;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	padding: 5px 10px;
+}
+
+.caption{
+	display: flex;
+	justify-content: center;
+	padding: 10px 0;
+}
+.currency-name{
+	border-bottom: 1px solid rgba(255, 255, 255, 1);
+}
+
+.currency-actions{
+	width:100%;
+	display: flex;
+}
+.currency-action{
+	width:50%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.open-position{
+	background-color: rgba(255, 255, 255, 0.1);
+	width: 100%;
+	display: flex;
+	margin-bottom: 5px;
+}
+
+.position-info{
+	width:50%;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+
+/******************************  BIG SCREEN PREFIXES  ******************************/
+
+@media screen and (min-width: 993px ) {
+
+	/* INFO BAR */
+	#info-bar{
+		justify-content: center;
+	}
+
+	#info-bar>div{
+		margin-right: 2em;
+	}
+	
+
+	/* MARKET WINDOW */
+	.currency-list{
+		width:80%;
+	}
+
+	.currency-info{
+		display: flex;
+		flex-direction: row;
+	}
+
+	.caption{
+		align-items: center;
+		padding: 0;
+	}
+	.currency-name{
+		border-bottom:none
+	}
+	.currency-action{
+		align-items: center;
+		flex-direction: row;
+	}
+
+	.currency-action > span{
+		width: 50%;
+		display: block;
+	}
+	/* open position */
+	.open-position{
+		justify-content: center;
+		align-items: center;
+	}
+	.position-info{
+		width: auto;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.position-info > .describe-text{
+		margin:0 5px 0 25px;
+	}
+	.position-info > .btn-custom{
+		margin-left: 25px;
+	}
+
+}

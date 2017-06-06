@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Market - Trade with more then 100 currency pairs</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- BOOTSTRAP -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
+        <span class="navbar-text btn-sign-in">Sign in</span>
+      </button>
+      <span class="navbar-brand">CM</span>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><span class="navbar-text btn-sign-in">Sign in</span></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<div id="foreground-container">
+	<div id="foreground">
+		
+		<div class="fg-item" id="fg-loader">
+			<div class="loader-big center-block"></div>
+		</div>
+		<div class="fg-item" id="fg-sign-in">
+			<div class="fg-box center-block">
+				<p class="text-muted">Sign in to your account</p>
+				<div class="form-message">
+					<div class="form-error"></div>
+				</div>
+				<input id="inp-sign-in-email" class="inp-custom" type="text" placeholder="Email">
+				<input id="inp-sign-in-password" class="inp-custom" type="password" placeholder="Password">
+				<div class="row">
+					<button id="btn-sign-in-submit" class="btn-custom">SIGN IN</button>
+					<button class="btn-white btn-cancel-sign-in">CANCEL</button>
+				</div>
+				<div class="loader-small" id="sign-in-loader"></div>
+			</div>		
+		</div><!--end fg-sign-in -->		
+
+		<div class="fg-item" id="fg-sign-up">
+			<div class="fg-box center-block">
+				<p class="text-muted">Creat an account</p>
+				<input id="inp-sign-up-email" class="inp-custom" type="text" placeholder="Email">
+				<input id="inp-sign-up-password" class="inp-custom" type="password" placeholder="Password">
+				<div class="row">
+					<button id="btn-sign-up-submit" class="btn-custom">SIGN UP</button>
+					<button class="btn-white btn-cancel-sign-up">CANCEL</button>			
+				</div>
+			</div>		
+		</div><!--end fg-sign-in -->	
+
+	</div>
+</div>
+
+
+<div id="info-bar">
+	<div>
+		<span id="available-balance"></span>
+		<span class="describe-text" >Available</span>
+	</div>
+	<div>
+		<span id="equity-balance"></span>
+		<span class="describe-text" >Equity</span>
+	</div>
+	<div>
+		<span id="profit-loss"></span>
+		<span class="describe-text" >Profit/Loss</span>
+	</div>
+</div>
+
+
+<div id="action-wdw">
+	<div id="action-info">
+		<h2 id="action-stock-name"></h2>
+
+		<div class="additional-info">
+			<span class="describe-text">Position</span>
+			<span id="action-position-type"></span>
+		</div>
+
+		<div class="additional-info">
+			<span class="describe-text">Price</span>
+			<span id="action-stock-price"></span>
+		</div>
+
+		<div class="additional-info">
+			<span class="describe-text own-row">Amout</span>
+			<input id="action-stock-quantity" class="inp-custom" type="text" value="1000">
+		</div>
+
+		<div class="additional-info">
+			<input  id="close-on-profit" class="action-close-confirm" type="checkbox">
+			<span class="describe-text">Close on profit</span>
+			<div class="action-close-container">
+				<input class="close-position-max inp-custom" type="text">
+				<span> $</span>						
+			</div>
+		</div>
+		<div class="additional-info">
+			<input id="close-on-loss" class="action-close-confirm inp-custom" type="checkbox">
+			<span class="describe-text">Close on loss</span>
+			<div class="action-close-container">
+				<input class="close-position-max inp-custom" type="text">
+				<span> $</span>						
+			</div>
+		</div>
+
+		<div class="additional-info">
+			<span class="describe-text">Total</span>
+			<span id="action-total-to-pay"></span>
+		</div>
+
+		<div class="additional-info">
+			<span class="red-text" id="action-error"></span>
+		</div>
+
+		<div class="action-button-container">
+			<button id="action-submit-action" class="btn-custom">BUY</button>
+			<button id="action-cancel-action" class="btn-custom btn-white">CANCEL</button>
+		</div>	
+
+	</div>
+</div>
+
+
+<div id="wdw-home" class="wdw">
+
+	<div id="cover-container">
+		<img id="cover-img" src="images/cover.jpg" alt="cover">
+		<p id="cover-title">CURRENCY MARKET</p>
+		<p id="cover-slogan">Buy low, sell high</p>
+	</div>
+
+	<div class="container height-space-container">
+		<div class="row">
+
+			<div class="col-xs-12 col-md-4">
+				<img class="responsive-img center-block" src="images/currency-icon.png" alt="currency">
+				<h2 class="text-center">Currencies</h2>
+				<p class="text-center text-muted">More than <strong class="text-muted">100 currency pairs</strong> to choose from</p>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+				<img class="responsive-img center-block" src="images/time-icon.png" alt="currency">
+				<h2 class="text-center">Data update</h2>
+				<p class="text-center text-muted">The newest data <strong class="text-muted"> every second</strong></p>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+				<img class="responsive-img center-block" src="images/money-icon.png" alt="currency">
+				<h2 class="text-center">Now fees</h2>
+				<p class="text-center text-muted">What you earn is all yours. Simple - no fees, no taxes</p>
+			</div>
+
+		</div>		
+	</div>
+
+	<div class="container height-space-container">
+		<p class="text-center text-muted">Sign up now and <strong class="text-muted">start earning</strong>. Make tommorow a better day</p>
+		<button class="btn-custom center-block btn-sign-up">SIGN UP</button>
+	</div>
+
+
+	<footer>
+		<div class="row copyrigth">
+			<p class="text-center">CURRENCY MARKET &copy; 2017.</p>
+		</div>
+		<div class="row footer-container">
+			<div id="company-info">
+				<h2 class="text-muted">Our office</h2>
+				<address class="text-muted">Lygten 37<br> 2400<br> Kobenhavn NV</address>	
+				<p class="text-muted"><strong class="text-muted">Mobile: </strong>(+45) 123 123 12</p>
+			</div>
+		</div>
+	</footer>
+</div>
+
+
+<div id="wdw-market" class="wdw">
+	<div class="main-container">
+		<div class="currency-list"></div>
+	</div>
+</div>
+
+<div id="chart-container">
+	<div id="chart"></div>
+		<div id="chart-actions">
+		<button class="btn-custom" id="show-hide-chart">HIDE CHART</button>
+	</div>
+</div>  
+
+
+<!-- jQUERY-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- jQUERY  UI -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!--Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- CANVAS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script> 
+
+<script src="app.js"></script>
+
+</body>
+</html>
